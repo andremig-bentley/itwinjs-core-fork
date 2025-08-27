@@ -1,6 +1,10 @@
 {
   "name": "@itwin/presentation-backend",
+<<<<<<< HEAD
   "version": "5.2.0-dev.13",
+=======
+  "version": "5.2.1",
+>>>>>>> ff3cccaf35 (Apply deprecation date rule for v5.2.1)
   "description": "Backend of iTwin.js Presentation library",
   "license": "MIT",
   "repository": {

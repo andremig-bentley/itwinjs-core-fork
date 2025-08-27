@@ -1,6 +1,10 @@
 {
   "name": "@itwin/ecschema-metadata",
+<<<<<<< HEAD
   "version": "5.2.0-dev.13",
+=======
+  "version": "5.2.1",
+>>>>>>> ff3cccaf35 (Apply deprecation date rule for v5.2.1)
   "description": "ECObjects core concepts in typescript",
   "license": "MIT",
   "main": "lib/cjs/ecschema-metadata.js",

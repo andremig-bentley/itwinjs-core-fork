@@ -1,6 +1,10 @@
 {
   "name": "@itwin/core-bentley",
+<<<<<<< HEAD
   "version": "5.2.0-dev.13",
+=======
+  "version": "5.2.1",
+>>>>>>> ff3cccaf35 (Apply deprecation date rule for v5.2.1)
   "description": "Bentley JavaScript core components",
   "main": "lib/cjs/core-bentley.js",
   "module": "lib/esm/core-bentley.js",

@@ -1,6 +1,20 @@
 # Change Log - @itwin/editor-backend
 
+<<<<<<< HEAD
 This log was last generated on Fri, 22 Aug 2025 14:26:46 GMT and should not be manually modified.
+=======
+This log was last generated on Wed, 27 Aug 2025 22:55:15 GMT and should not be manually modified.
+
+## 5.2.1
+Wed, 27 Aug 2025 22:55:15 GMT
+
+_Version update only_
+
+## 5.2.0
+Wed, 27 Aug 2025 22:45:00 GMT
+
+_Version update only_
+>>>>>>> ff3cccaf35 (Apply deprecation date rule for v5.2.1)
 
 ## 5.1.4
 Fri, 22 Aug 2025 14:22:33 GMT
