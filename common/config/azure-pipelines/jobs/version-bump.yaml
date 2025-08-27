@@ -132,7 +132,7 @@ jobs:
           fi
         displayName: Update 'gather-docs.yaml' and commit to release branch
 
-      - bash: git push --set-upstream https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core $(getBranchName.releaseBranchName) -q
+      - bash: git push --set-upstream https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork $(getBranchName.releaseBranchName) -q
         displayName: Publish the release branch
 
   - job: Bump
@@ -245,7 +245,7 @@ jobs:
         : - bash: 'git tag -a release/$(getVersion.version) -m "v$(getVersion.version)"'
             displayName: Create git tag
 
-      - bash: git fetch https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core refs/notes/commits:refs/notes/commits
+      - bash: git fetch https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork refs/notes/commits:refs/notes/commits
         displayName: git fetch refs/notes/commits
         continueOnError: true
 
@@ -263,14 +263,14 @@ jobs:
         condition: eq(variables['deprecationCommentChanges'], 'true')
 
       - bash: |
-          git push https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core refs/notes/commits
+          git push https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork refs/notes/commits
         displayName: git push refs/notes/commits
 
-      - bash: "git push --follow-tags https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core $(releaseBranchName)"
+      - bash: "git push --follow-tags https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork $(releaseBranchName)"
         displayName: Push version bump for release candidate
         condition: eq('${{ parameters.BumpType }}', 'releaseCandidate')
 
-      - bash: "git push --follow-tags https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core HEAD:$(Build.SourceBranch)"
+      - bash: "git push --follow-tags https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork HEAD:$(Build.SourceBranch)"
         displayName: Push version bump for non-release candidate
         condition: ne('${{ parameters.BumpType }}', 'releaseCandidate')
 
@@ -342,5 +342,5 @@ jobs:
           git status
         displayName: Get version and committing
 
-      - bash: git push https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core $(Build.SourceBranchName) -q
+      - bash: git push https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork $(Build.SourceBranchName) -q
         displayName: "Push version bump"
