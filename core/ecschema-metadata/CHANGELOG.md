@@ -1,6 +1,13 @@
 # Change Log - @itwin/ecschema-metadata
 
-This log was last generated on Fri, 22 Aug 2025 14:26:46 GMT and should not be manually modified.
+This log was last generated on Wed, 27 Aug 2025 22:45:00 GMT and should not be manually modified.
+
+## 5.2.0
+Wed, 27 Aug 2025 22:45:00 GMT
+
+### Updates
+
+- Add FormatSetFormatsProvider
 
 ## 5.1.4
 Fri, 22 Aug 2025 14:22:33 GMT
