@@ -229,6 +229,9 @@ jobs:
             displayName: NextVersion.md rename and replace
             condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
 
+      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
+        - template: "../templates/run-eslint-deprecation.yaml"
+
       - bash: "git add ."
         displayName: Git add
 
@@ -237,9 +240,6 @@ jobs:
 
           git commit -m "$(getVersion.version)" --author="imodeljs-admin <imodeljs-admin@users.noreply.github.com>"
         displayName: Commit version bump
-
-      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
-        - template: "../templates/run-eslint-deprecation.yaml"
 
       - ? ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}
         : - bash: 'git tag -a release/$(getVersion.version) -m "v$(getVersion.version)"'
