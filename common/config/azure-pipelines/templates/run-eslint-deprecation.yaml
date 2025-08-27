@@ -34,7 +34,7 @@ steps:
     name: deprecationCommit
 
   - bash: |
-      git fetch https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core master:master
+      git fetch https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork master:master
       git checkout master
     displayName: Checkout to master
 
@@ -42,7 +42,7 @@ steps:
       commitHash=$(deprecationCommit.hash)
       echo "Attempting to cherry-pick commit: $commitHash"
       if git cherry-pick $commitHash; then
-        git push https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core HEAD:master
+        git push https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork HEAD:master
         echo "Successfully applied deprecation comment updates to master"
       else
         # Merge conflicts: Create branch, set up PR for manual resolution.
@@ -60,7 +60,7 @@ steps:
         # Add, commit and push all ESLint deprecation changes (including conflicts) to conflict handling branch for manual resolution.
         git add .
         git commit -m "Add deprecation rule changes with all merge conflicts"
-        git push --set-upstream https://$(GITHUBTOKEN)@github.com/iTwin/itwinjs-core $conflictBranchName
+        git push --set-upstream https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork $conflictBranchName
         echo "##[warning] Branch '$conflictBranchName' created and pushed. It contains all ESLint deprecation changes and cherry-pick conflicts. Manually fix conflicts inside branch and merge changes into master. Draft PR will be created now"
 
         # Create a PR with new conflict branch
@@ -69,7 +69,7 @@ steps:
     displayName: Perform cherry-pick operation for deprecation changes
     continueOnError: true
     env:
-      GH_TOKEN: $(GITHUBTOKEN)
+      GH_TOKEN: $(MYGITHUBTOKEN)
 
   - bash: git checkout $(deprecationCommit.hash)
     displayName: Checkout back to branch that ran the pipeline
