@@ -1,6 +1,30 @@
 # Change Log - @itwin/map-layers-auth
 
+<<<<<<< HEAD
 This log was last generated on Fri, 22 Aug 2025 14:26:46 GMT and should not be manually modified.
+=======
+This log was last generated on Thu, 28 Aug 2025 07:18:14 GMT and should not be manually modified.
+
+## 5.2.3
+Thu, 28 Aug 2025 07:18:14 GMT
+
+_Version update only_
+
+## 5.2.2
+Thu, 28 Aug 2025 06:58:19 GMT
+
+_Version update only_
+
+## 5.2.1
+Thu, 28 Aug 2025 06:43:56 GMT
+
+_Version update only_
+
+## 5.2.0
+Thu, 28 Aug 2025 06:27:37 GMT
+
+_Version update only_
+>>>>>>> cfa3d74eb8 (Apply deprecation date rule for v5.2.3)
 
 ## 5.1.4
 Fri, 22 Aug 2025 14:22:33 GMT

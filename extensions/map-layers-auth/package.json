@@ -1,6 +1,10 @@
 {
   "name": "@itwin/map-layers-auth",
+<<<<<<< HEAD
   "version": "5.2.0-dev.14",
+=======
+  "version": "5.2.3",
+>>>>>>> cfa3d74eb8 (Apply deprecation date rule for v5.2.3)
   "description": "Extension that adds a Map Layers Widget",
   "main": "lib/cjs/map-layers-auth.js",
   "module": "lib/esm/map-layers-auth.js",

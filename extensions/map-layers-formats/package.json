@@ -1,6 +1,10 @@
 {
   "name": "@itwin/map-layers-formats",
+<<<<<<< HEAD
   "version": "5.2.0-dev.14",
+=======
+  "version": "5.2.3",
+>>>>>>> cfa3d74eb8 (Apply deprecation date rule for v5.2.3)
   "description": "Enables additional map-layers formats in iTwin.js",
   "main": "lib/cjs/map-layers-formats.js",
   "module": "lib/esm/map-layers-formats.js",

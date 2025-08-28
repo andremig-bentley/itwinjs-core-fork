@@ -1,6 +1,10 @@
 {
   "name": "@itwin/ecsql-common",
+<<<<<<< HEAD
   "version": "5.2.0-dev.14",
+=======
+  "version": "5.2.3",
+>>>>>>> cfa3d74eb8 (Apply deprecation date rule for v5.2.3)
   "description": "ECSql component that can be reference on backend and frontend",
   "main": "lib/cjs/ecsql-common.js",
   "module": "lib/esm/ecsql-common.js",
