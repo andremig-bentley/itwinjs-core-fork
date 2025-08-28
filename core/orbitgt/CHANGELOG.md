@@ -1,6 +1,11 @@
 # Change Log - @itwin/core-orbitgt
 
-This log was last generated on Thu, 28 Aug 2025 22:15:49 GMT and should not be manually modified.
+This log was last generated on Thu, 28 Aug 2025 22:49:02 GMT and should not be manually modified.
+
+## 5.2.7
+Thu, 28 Aug 2025 22:49:02 GMT
+
+_Version update only_
 
 ## 5.2.6
 Thu, 28 Aug 2025 22:15:49 GMT
