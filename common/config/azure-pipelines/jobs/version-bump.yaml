@@ -232,14 +232,16 @@ jobs:
       - bash: "git add ."
         displayName: Git add
 
-      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
-        - template: "../templates/run-eslint-deprecation.yaml"
-
       - bash: |
           echo Committing version bump $(getVersion.version)...
 
           git commit -m "$(getVersion.version)" --author="imodeljs-admin <imodeljs-admin@users.noreply.github.com>"
         displayName: Commit version bump
+
+      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
+        - template: "../templates/run-eslint-deprecation.yaml"
+        - bash: |
+            git commit --allow-empty -m "$(getVersion.version)" --author="imodeljs-admin <imodeljs-admin@users.noreply.github.com>"
 
       - ? ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}
         : - bash: 'git tag -a release/$(getVersion.version) -m "v$(getVersion.version)"'
