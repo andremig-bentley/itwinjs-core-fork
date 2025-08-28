@@ -1,6 +1,10 @@
 {
   "name": "@itwin/webgl-compatibility",
+<<<<<<< HEAD
   "version": "5.2.0-dev.14",
+=======
+  "version": "5.2.4",
+>>>>>>> ea1315581c (Apply deprecation date rule for v5.2.4)
   "description": "APIs for determining the level of compatibility of a browser+device with the iTwin.js rendering system.",
   "license": "MIT",
   "main": "lib/cjs/webgl-compatibility.js",

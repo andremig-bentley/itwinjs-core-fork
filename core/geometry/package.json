@@ -1,6 +1,10 @@
 {
   "name": "@itwin/core-geometry",
+<<<<<<< HEAD
   "version": "5.2.0-dev.14",
+=======
+  "version": "5.2.4",
+>>>>>>> ea1315581c (Apply deprecation date rule for v5.2.4)
   "description": "iTwin.js Core Geometry library",
   "main": "lib/cjs/core-geometry.js",
   "module": "lib/esm/core-geometry.js",

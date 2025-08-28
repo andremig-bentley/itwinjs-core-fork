@@ -1,6 +1,10 @@
 {
   "name": "@itwin/certa",
+<<<<<<< HEAD
   "version": "5.2.0-dev.14",
+=======
+  "version": "5.2.4",
+>>>>>>> ea1315581c (Apply deprecation date rule for v5.2.4)
   "description": "A mocha-based integration test runner",
   "license": "MIT",
   "main": "bin/certa.js",
