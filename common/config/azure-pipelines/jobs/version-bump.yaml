@@ -299,7 +299,7 @@ jobs:
         displayName: Commit version bump
 
       - ? ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
-        ${{ if eq(variables['applyDeprecation.needsPR'], 'true') }}:
+        ${{ if eq(variables['needsPR'], 'true') }}:
           - bash: |
              # Merge conflicts: Create branch, set up PR for manual resolution.
                 echo "##[warning] Cherry-pick operation on master failed (most likely due to merge conflicts). Manual intervention required"
