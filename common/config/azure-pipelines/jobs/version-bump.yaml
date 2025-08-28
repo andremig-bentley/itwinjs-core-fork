@@ -229,11 +229,11 @@ jobs:
             displayName: NextVersion.md rename and replace
             condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
 
-      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
-        - template: "../templates/run-eslint-deprecation.yaml"
-
       - bash: "git add ."
         displayName: Git add
+
+      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
+        - template: "../templates/run-eslint-deprecation.yaml"
 
       - bash: |
           echo Committing version bump $(getVersion.version)...
