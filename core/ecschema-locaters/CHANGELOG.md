@@ -1,6 +1,11 @@
 # Change Log - @itwin/ecschema-locaters
 
-This log was last generated on Thu, 28 Aug 2025 06:43:56 GMT and should not be manually modified.
+This log was last generated on Thu, 28 Aug 2025 06:58:19 GMT and should not be manually modified.
+
+## 5.2.2
+Thu, 28 Aug 2025 06:58:19 GMT
+
+_Version update only_
 
 ## 5.2.1
 Thu, 28 Aug 2025 06:43:56 GMT
