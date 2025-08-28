@@ -174,6 +174,9 @@ jobs:
         : - bash: "node common/scripts/install-run-rush version --bump"
             displayName: Rush version --bump
 
+      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
+        - template: "../templates/run-eslint-deprecation.yaml"
+
       # Support two separate bump types on release branches
       - ? ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}
         : - bash: "node common/scripts/install-run-rush version --override-bump ${{ parameters.BumpType }} --version-policy prerelease-monorepo-lockStep --bump"
@@ -231,9 +234,6 @@ jobs:
 
       - bash: "git add ."
         displayName: Git add
-
-      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
-        - template: "../templates/run-eslint-deprecation.yaml"
 
       - bash: |
           echo Committing version bump $(getVersion.version)...
