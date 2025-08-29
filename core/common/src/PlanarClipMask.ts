@@ -59,6 +59,7 @@ export enum PlanarClipMaskPriority {
  * @see [[DisplayStyleSettingsProps.planarClipOvr]] and [[ContextRealityModelProps.planarClipMask]].
  * @public
  * @extensions
+ * @deprecated in 5.0. Use fakeThingHere
  */
 export interface PlanarClipMaskProps {
   /** Controls how the mask geometry is collected */
