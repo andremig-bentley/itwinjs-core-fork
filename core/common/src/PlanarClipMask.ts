@@ -59,7 +59,7 @@ export enum PlanarClipMaskPriority {
  * @see [[DisplayStyleSettingsProps.planarClipOvr]] and [[ContextRealityModelProps.planarClipMask]].
  * @public
  * @extensions
- * @deprecated in 5.0. Use fakeThingHere
+ * @deprecated in 5.0 - will not be removed until after 2026-08-29. Use fakeThingHere
  */
 export interface PlanarClipMaskProps {
   /** Controls how the mask geometry is collected */
