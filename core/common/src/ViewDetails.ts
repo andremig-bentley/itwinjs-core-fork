@@ -36,7 +36,7 @@ export interface ViewDetailsProps {
 /** Describes the orientation of the grid displayed within a [Viewport]($frontend).
  * @public
  * @extensions
- * @deprecated in 5.0. Use fakeThingHere
+ * @deprecated in 5.0 - will not be removed until after 2026-08-29. Use fakeThingHere
  */
 export enum GridOrientationType {
   /** Oriented with the view. */
