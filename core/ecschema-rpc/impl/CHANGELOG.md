@@ -1,6 +1,11 @@
 # Change Log - @itwin/ecschema-rpcinterface-impl
 
-This log was last generated on Fri, 29 Aug 2025 01:10:09 GMT and should not be manually modified.
+This log was last generated on Fri, 29 Aug 2025 01:44:06 GMT and should not be manually modified.
+
+## 5.2.9
+Fri, 29 Aug 2025 01:44:06 GMT
+
+_Version update only_
 
 ## 5.2.8
 Fri, 29 Aug 2025 01:10:09 GMT

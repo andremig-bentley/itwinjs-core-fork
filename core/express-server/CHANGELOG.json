@@ -2,6 +2,12 @@
   "name": "@itwin/express-server",
   "entries": [
     {
+      "version": "5.2.9",
+      "tag": "@itwin/express-server_v5.2.9",
+      "date": "Fri, 29 Aug 2025 01:44:06 GMT",
+      "comments": {}
+    },
+    {
       "version": "5.2.8",
       "tag": "@itwin/express-server_v5.2.8",
       "date": "Fri, 29 Aug 2025 01:10:09 GMT",
