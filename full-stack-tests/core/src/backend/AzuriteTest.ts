@@ -12,7 +12,7 @@ import { AccessToken, Guid } from "@itwin/core-bentley";
 import { LocalDirName, LocalFileName } from "@itwin/core-common";
 
 // spell:ignore imodelid itwinid mkdirs devstoreaccount racwdl
-
+//useless comment
 export namespace AzuriteTest {
 
   export const storageType = "azure";
