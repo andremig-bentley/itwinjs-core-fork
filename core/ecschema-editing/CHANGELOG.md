@@ -1,6 +1,11 @@
 # Change Log - @itwin/ecschema-editing
 
-This log was last generated on Thu, 28 Aug 2025 22:49:02 GMT and should not be manually modified.
+This log was last generated on Fri, 29 Aug 2025 01:10:09 GMT and should not be manually modified.
+
+## 5.2.8
+Fri, 29 Aug 2025 01:10:09 GMT
+
+_Version update only_
 
 ## 5.2.7
 Thu, 28 Aug 2025 22:49:02 GMT
