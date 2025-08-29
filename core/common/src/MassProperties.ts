@@ -44,6 +44,7 @@ export interface MassPropertiesPerCandidateRequestProps {
  * @public
  * @extensions
  */
+/** @deprecated in 5.0. Use fakeThingHere */
 export interface MassPropertiesResponseProps {
   /** Success if requested [[MassPropertiesOperation]] could be evaluated for the specified elements */
   status: BentleyStatus;
