@@ -5,7 +5,7 @@
 /** @packageDocumentation
  * @module Geometry
  */
-
+//useless comment
 import { BentleyStatus, CompressedId64Set, Id64Array, Id64String } from "@itwin/core-bentley";
 import { XYZProps } from "@itwin/core-geometry";
 
