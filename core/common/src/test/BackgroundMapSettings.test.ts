@@ -8,6 +8,7 @@ import { BackgroundMapSettings, GlobeMode, PersistentBackgroundMapProps } from "
 import { BackgroundMapType } from "../BackgroundMapProvider";
 import { TerrainHeightOriginMode } from "../TerrainSettings";
 
+//useless comment
 describe("BackgroundMapSettings", () => {
   it("round-trips through JSON", () => {
     const roundTrip = (input: PersistentBackgroundMapProps | undefined, expected: PersistentBackgroundMapProps | "input") => {
