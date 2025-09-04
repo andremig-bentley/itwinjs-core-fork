@@ -1,6 +1,29 @@
 # Change Log - @itwin/presentation-common
 
-This log was last generated on Fri, 22 Aug 2025 14:26:46 GMT and should not be manually modified.
+This log was last generated on Thu, 04 Sep 2025 08:42:53 GMT and should not be manually modified.
+
+## 5.2.3
+Thu, 04 Sep 2025 08:42:53 GMT
+
+_Version update only_
+
+## 5.2.2
+Thu, 04 Sep 2025 08:34:49 GMT
+
+_Version update only_
+
+## 5.2.1
+Thu, 04 Sep 2025 08:24:39 GMT
+
+_Version update only_
+
+## 5.2.0
+Thu, 04 Sep 2025 08:12:31 GMT
+
+### Updates
+
+- Fixed content formatting failure when struct property value has members with `undefined` value.
+- Deprecated hierarchies-related APIs
 
 ## 5.1.4
 Fri, 22 Aug 2025 14:22:33 GMT

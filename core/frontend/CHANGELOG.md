@@ -1,6 +1,33 @@
 # Change Log - @itwin/core-frontend
 
-This log was last generated on Fri, 22 Aug 2025 14:26:46 GMT and should not be manually modified.
+This log was last generated on Thu, 04 Sep 2025 08:42:53 GMT and should not be manually modified.
+
+## 5.2.3
+Thu, 04 Sep 2025 08:42:53 GMT
+
+_Version update only_
+
+## 5.2.2
+Thu, 04 Sep 2025 08:34:49 GMT
+
+_Version update only_
+
+## 5.2.1
+Thu, 04 Sep 2025 08:24:39 GMT
+
+_Version update only_
+
+## 5.2.0
+Thu, 04 Sep 2025 08:12:31 GMT
+
+### Updates
+
+- Changed queryExtents to use ECSqlReader
+- Add support for new KindOfQuantity for coordinate length
+- Add DynamicsContext.addOverlay
+- Improve frame rate during interactive editing.
+- A model drawn as only contour lines will only mask the background map where the contour lines draw.
+- Fix an exception when terrain is enabled.
 
 ## 5.1.4
 Fri, 22 Aug 2025 14:22:33 GMT
