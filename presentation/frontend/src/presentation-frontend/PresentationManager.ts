@@ -210,7 +210,7 @@ interface PresentationManagerInternalProps {
  * the backend implementation.
  *
  * @public
- @deprecated in 5.0. Use something else.
+ @deprecated in 5.0 - will not be removed until after 2026-09-04. Use something else.
  */
 export class PresentationManager implements Disposable {
   private _requestsHandler: RpcRequestsHandler;
