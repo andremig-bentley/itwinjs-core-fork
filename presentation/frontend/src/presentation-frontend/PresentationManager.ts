@@ -142,6 +142,7 @@ export type GetDistinctValuesRequestOptions = DistinctValuesRequestOptions<IMode
 /**
  * Properties used to configure [[PresentationManager]]
  * @public
+ * @deprecated in 5.0. Use something else.
  */
 export interface PresentationManagerProps {
   /**
