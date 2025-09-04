@@ -1,6 +1,14 @@
 # Change Log - @itwin/ecschema-metadata
 
-This log was last generated on Fri, 22 Aug 2025 14:26:46 GMT and should not be manually modified.
+This log was last generated on Thu, 04 Sep 2025 08:12:31 GMT and should not be manually modified.
+
+## 5.2.0
+Thu, 04 Sep 2025 08:12:31 GMT
+
+### Updates
+
+- Add FormatSetFormatsProvider
+- Add required UnitSystem field to FormatSet interface
 
 ## 5.1.4
 Fri, 22 Aug 2025 14:22:33 GMT

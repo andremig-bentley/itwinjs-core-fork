@@ -2,6 +2,18 @@
   "name": "@itwin/ecschema-rpcinterface-impl",
   "entries": [
     {
+      "version": "5.2.0",
+      "tag": "@itwin/ecschema-rpcinterface-impl_v5.2.0",
+      "date": "Thu, 04 Sep 2025 08:12:31 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "Moved exception handling of 'schema not found' to backend implementation to avoid RPC error logging."
+          }
+        ]
+      }
+    },
+    {
       "version": "5.1.4",
       "tag": "@itwin/ecschema-rpcinterface-impl_v5.1.4",
       "date": "Fri, 22 Aug 2025 14:22:33 GMT",
