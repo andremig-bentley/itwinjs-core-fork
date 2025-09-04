@@ -48,6 +48,7 @@ export enum LockState {
 /**
  * The properties to access a V2 checkpoint through a daemon.
  * @public
+ * @deprecated in 4.7. Use this other thing.
  */
 export interface V2CheckpointAccessProps {
   /** blob store account name. */
