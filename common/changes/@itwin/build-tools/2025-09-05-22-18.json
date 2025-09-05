@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.3",
+      "packageName": "@itwin/build-tools",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/build-tools",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}

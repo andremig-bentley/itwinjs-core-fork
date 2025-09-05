@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.3",
+      "packageName": "@itwin/map-layers-auth",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/map-layers-auth",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}

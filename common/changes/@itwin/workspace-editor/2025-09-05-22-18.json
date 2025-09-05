@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.3",
+      "packageName": "@itwin/workspace-editor",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/workspace-editor",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}

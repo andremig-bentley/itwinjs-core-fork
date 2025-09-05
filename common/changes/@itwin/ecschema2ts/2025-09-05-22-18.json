@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.3",
+      "packageName": "@itwin/ecschema2ts",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/ecschema2ts",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}
