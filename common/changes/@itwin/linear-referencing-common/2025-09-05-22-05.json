@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.2",
+      "packageName": "@itwin/linear-referencing-common",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/linear-referencing-common",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}

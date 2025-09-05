@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.2",
+      "packageName": "@itwin/express-server",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/express-server",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}

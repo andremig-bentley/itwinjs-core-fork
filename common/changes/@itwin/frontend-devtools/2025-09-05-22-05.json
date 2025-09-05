@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.2",
+      "packageName": "@itwin/frontend-devtools",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/frontend-devtools",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}
