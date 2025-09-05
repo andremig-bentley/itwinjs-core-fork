@@ -26,7 +26,7 @@ export class UiSyncEvent extends BeUiEvent<UiSyncEventArgs> { }
 /** This class is used to send eventIds to interested UI components so the component can determine if it needs
  * to refresh its display by calling setState on itself.
  * @public
- * @deprecated in 4.2.0 - will not be removed until after 2026-06-13. Use [[SyncUiEventDispatcher]] from @itwin/appui-react.
+ * @deprecated in 4.2.0. Use [[SyncUiEventDispatcher]] from @itwin/appui-react.
  */
 export class UiEventDispatcher {
   private _syncEventTimerId: number | undefined;
