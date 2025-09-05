@@ -172,6 +172,61 @@ jobs:
       - bash: node common/scripts/install-run-rush.js audit
         displayName: rush audit
 
+      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
+          - bash: node common/scripts/install-run-rush.js lint-deprecation
+            displayName: rush lint-deprecation
+
+          - bash: |
+              if git diff --quiet; then
+                echo "No deprecation comment changes were made"
+              else
+                echo "Deprecation comment changes were made"
+                git add .
+                echo "##vso[task.setvariable variable=deprecationCommentChangesMade]true"
+              fi
+            displayName: Determine whether ESLint rule made any changes
+
+          - bash: |
+              git commit -m "Apply deprecation date rule"
+            displayName: Commit deprecation comment changes to release branch
+            condition: eq(variables['deprecationCommentChangesMade'], 'true')
+
+          - bash: |
+              deprecationDateCommitHash=$(git log -1 --format=%H)
+              echo "##vso[task.setvariable variable=hash;isOutput=true]$deprecationDateCommitHash"
+            displayName: Save SHA-1 hash of the commit
+            name: deprecationCommit
+            condition: eq(variables['deprecationCommentChangesMade'], 'true')
+
+          - bash: |
+              git fetch https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork master:master
+              git checkout master
+            displayName: Checkout to master
+            condition: eq(variables['deprecationCommentChangesMade'], 'true')
+
+          - bash: |
+              commitHash=$(deprecationCommit.hash)
+              echo "Attempting to cherry-pick commit: $commitHash"
+              if git cherry-pick $commitHash; then
+                git push https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork HEAD:master
+                echo "Successfully applied deprecation comment updates to master"
+              else
+                git cherry-pick --abort
+                echo "##vso[task.setvariable variable=needsPR]true"
+                echo "Failed applying deprecation comment updates to master. A PR will be created for manual resolution."
+              fi
+
+            displayName: Perform cherry-pick operation for deprecation changes
+            continueOnError: true
+            env:
+              GH_TOKEN: $(MYGITHUBTOKEN)
+            name: applyDeprecation
+            condition: eq(variables['deprecationCommentChangesMade'], 'true')
+
+          - bash: git checkout $(deprecationCommit.hash)
+            displayName: Checkout back to branch that ran the pipeline
+            condition: eq(variables['deprecationCommentChangesMade'], 'true')
+
       # Can be run on any branch to do a standard version bump. Which is currently -dev bumps.
       - ? ${{ if or(eq(parameters.BumpType, 'nightly'), eq(parameters.BumpType, 'releaseCandidate')) }}
         : - bash: "node common/scripts/install-run-rush version --bump"
@@ -192,72 +247,6 @@ jobs:
           echo "##vso[task.setvariable variable=version;isOutput=true]$quotelessVersion"
         displayName: Get new version number
         name: getVersion
-
-      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
-          - bash: |
-              newPackageVersion=$(cat common/config/rush/version-policies.json | grep \"version\": | awk -F'"' '{split($4,a,"-"); print a[1]}')
-              sed -i "s/\(addVersion: \"\)[^\"]*/\1$newPackageVersion/" common/config/eslint/eslint.config.deprecation-policy.js
-              echo "##vso[task.setvariable variable=version;isOutput=true]$newPackageVersion"
-            displayName: Change addVersion in ESLint config to current version
-            name: getNewVersion
-
-          - bash: git add .
-            displayName: git add .
-
-          - bash: node common/scripts/install-run-rush.js lint-deprecation
-            displayName: rush lint-deprecation
-
-          - bash: |
-              if git diff --quiet; then
-                echo "No deprecation comment changes were made"
-              else
-                echo "Deprecation comment changes were made"
-                git add .
-                echo "##vso[task.setvariable variable=deprecationCommentChangesMade]true"
-              fi
-            displayName: Determine whether ESLint rule made any changes
-
-      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
-        - bash: |
-            git commit -m "Apply deprecation date rule for v$(getNewVersion.version)"
-          displayName: Commit deprecation comment changes to release branch
-          condition: eq(variables['deprecationCommentChangesMade'], 'true')
-
-        - bash: |
-            deprecationDateCommitHash=$(git log -1 --format=%H)
-            echo "##vso[task.setvariable variable=hash;isOutput=true]$deprecationDateCommitHash"
-          displayName: Save SHA-1 hash of the commit
-          name: deprecationCommit
-          condition: eq(variables['deprecationCommentChangesMade'], 'true')
-
-        - bash: |
-            git fetch https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork master:master
-            git checkout master
-          displayName: Checkout to master
-          condition: eq(variables['deprecationCommentChangesMade'], 'true')
-
-        - bash: |
-            commitHash=$(deprecationCommit.hash)
-            echo "Attempting to cherry-pick commit: $commitHash"
-            if git cherry-pick $commitHash; then
-              git push https://$(MYGITHUBTOKEN)@github.com/andremig-bentley/itwinjs-core-fork HEAD:master
-              echo "Successfully applied deprecation comment updates to master"
-            else
-              git cherry-pick --abort
-              echo "##vso[task.setvariable variable=needsPR]true"
-              echo "Failed applying deprecation comment updates to master. A PR will be created for manual resolution."
-            fi
-
-          displayName: Perform cherry-pick operation for deprecation changes
-          continueOnError: true
-          env:
-            GH_TOKEN: $(MYGITHUBTOKEN)
-          name: applyDeprecation
-          condition: eq(variables['deprecationCommentChangesMade'], 'true')
-
-        - bash: git checkout $(deprecationCommit.hash)
-          displayName: Checkout back to branch that ran the pipeline
-          condition: eq(variables['deprecationCommentChangesMade'], 'true')
 
       # When creating a minor release, the NextVersion.md need to be cleared and the contents placed into a {Version Number}.md file
       - ${{ if eq(parameters.BumpType, 'minor') }}:
