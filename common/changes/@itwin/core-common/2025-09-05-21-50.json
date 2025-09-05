@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.1",
+      "packageName": "@itwin/core-common",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/core-common",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}
