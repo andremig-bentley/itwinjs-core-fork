@@ -1,6 +1,38 @@
 # Change Log - @itwin/linear-referencing-backend
 
-This log was last generated on Fri, 22 Aug 2025 14:26:46 GMT and should not be manually modified.
+This log was last generated on Fri, 05 Sep 2025 22:47:54 GMT and should not be manually modified.
+
+## 5.3.1
+Fri, 05 Sep 2025 22:47:54 GMT
+
+_Version update only_
+
+## 5.3.0
+Fri, 05 Sep 2025 22:37:33 GMT
+
+_Version update only_
+
+## 5.2.3
+Thu, 04 Sep 2025 08:42:53 GMT
+
+_Version update only_
+
+## 5.2.2
+Thu, 04 Sep 2025 08:34:49 GMT
+
+_Version update only_
+
+## 5.2.1
+Thu, 04 Sep 2025 08:24:39 GMT
+
+_Version update only_
+
+## 5.2.0
+Thu, 04 Sep 2025 08:12:31 GMT
+
+### Updates
+
+- Revert linear-referencing-backend from pure esm to cjs/esm
 
 ## 5.1.4
 Fri, 22 Aug 2025 14:22:33 GMT
