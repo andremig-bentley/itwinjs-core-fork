@@ -1,0 +1,12 @@
+{
+  "changes": [
+    {
+      "changeType": 0,
+      "newVersion": "5.2.0",
+      "packageName": "@itwin/analytical-backend",
+      "comment": ""
+    }
+  ],
+  "packageName": "@itwin/analytical-backend",
+  "email": "imodeljs-admin@users.noreply.github.com"
+}
