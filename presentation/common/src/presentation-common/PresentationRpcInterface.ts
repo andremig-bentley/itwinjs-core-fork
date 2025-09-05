@@ -83,7 +83,7 @@ export type PresentationRpcResponse<TResult = undefined> = Promise<PresentationR
 /**
  * Data structure for hierarchy request options.
  * @public
- * @deprecated in 5.2. Use the new [@itwin/presentation-hierarchies](https://github.com/iTwin/presentation/blob/master/packages/hierarchies/README.md)
+ * @deprecated in 5.2 - will not be removed until after 2026-09-05. Use the new [@itwin/presentation-hierarchies](https://github.com/iTwin/presentation/blob/master/packages/hierarchies/README.md)
  * package for creating hierarchies.
  */
 export type HierarchyRpcRequestOptions = PresentationRpcRequestOptions<HierarchyRequestOptions<never, NodeKey, RulesetVariableJSON>>;
