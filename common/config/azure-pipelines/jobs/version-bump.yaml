@@ -172,6 +172,27 @@ jobs:
       - bash: node common/scripts/install-run-rush.js audit
         displayName: rush audit
 
+      # Can be run on any branch to do a standard version bump. Which is currently -dev bumps.
+      - ? ${{ if or(eq(parameters.BumpType, 'nightly'), eq(parameters.BumpType, 'releaseCandidate')) }}
+        : - bash: "node common/scripts/install-run-rush version --bump"
+            displayName: Rush version --bump
+
+      # Support two separate bump types on release branches
+      - ? ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}
+        : - bash: "node common/scripts/install-run-rush version --override-bump ${{ parameters.BumpType }} --version-policy prerelease-monorepo-lockStep --bump"
+            displayName: Release version bump
+            condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
+
+      - bash: |
+          version=$(jq '.[] | .version' common/config/rush/version-policies.json)
+
+          # Remove quotes or else vso task complains
+          quotelessVersion=$(sed -e 's/^"//' -e 's/"$//' <<<"$version")
+          echo "##vso[build.updatebuildnumber]iModel.js_$quotelessVersion"
+          echo "##vso[task.setvariable variable=version;isOutput=true]$quotelessVersion"
+        displayName: Get new version number
+        name: getVersion
+
       - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
           - bash: |
               newPackageVersion=$(cat common/config/rush/version-policies.json | grep \"version\": | awk -F'"' '{split($4,a,"-"); print a[1]}')
@@ -237,27 +258,6 @@ jobs:
         - bash: git checkout $(deprecationCommit.hash)
           displayName: Checkout back to branch that ran the pipeline
           condition: eq(variables['deprecationCommentChangesMade'], 'true')
-
-      # Can be run on any branch to do a standard version bump. Which is currently -dev bumps.
-      - ? ${{ if or(eq(parameters.BumpType, 'nightly'), eq(parameters.BumpType, 'releaseCandidate')) }}
-        : - bash: "node common/scripts/install-run-rush version --bump"
-            displayName: Rush version --bump
-
-      # Support two separate bump types on release branches
-      - ? ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}
-        : - bash: "node common/scripts/install-run-rush version --override-bump ${{ parameters.BumpType }} --version-policy prerelease-monorepo-lockStep --bump"
-            displayName: Release version bump
-            condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
-
-      - bash: |
-          version=$(jq '.[] | .version' common/config/rush/version-policies.json)
-
-          # Remove quotes or else vso task complains
-          quotelessVersion=$(sed -e 's/^"//' -e 's/"$//' <<<"$version")
-          echo "##vso[build.updatebuildnumber]iModel.js_$quotelessVersion"
-          echo "##vso[task.setvariable variable=version;isOutput=true]$quotelessVersion"
-        displayName: Get new version number
-        name: getVersion
 
       # When creating a minor release, the NextVersion.md need to be cleared and the contents placed into a {Version Number}.md file
       - ${{ if eq(parameters.BumpType, 'minor') }}:

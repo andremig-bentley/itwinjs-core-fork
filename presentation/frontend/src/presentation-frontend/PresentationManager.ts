@@ -562,7 +562,9 @@ export class PresentationManager implements Disposable {
     }
   }
 
-  /** Retrieves overall content set size. */
+  /** Retrieves overall content set size.
+   * @deprecated in 4.5. Use something else instead.
+  */
   public async getContentSetSize(requestOptions: GetContentRequestOptions): Promise<number> {
     startIModelInitialization(requestOptions.imodel);
     const options = await this.addRulesetAndVariablesToOptions(requestOptions);
