@@ -519,6 +519,7 @@ export class PresentationManager implements Disposable {
    * Retrieves paths from root nodes to nodes containing filter text in their label.
    * @deprecated in 5.2 - will not be removed until after 2026-09-04. Use the new [@itwin/presentation-hierarchies](https://github.com/iTwin/presentation/blob/master/packages/hierarchies/README.md)
    * package for creating hierarchies.
+   * unnecessary comment
    */
   public async getFilteredNodePaths(
     requestOptions: FilterByTextHierarchyRequestOptions<IModelConnection, RulesetVariable> & ClientDiagnosticsAttribute,
