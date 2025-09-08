@@ -1,6 +1,11 @@
 # Change Log - @itwin/perf-tools
 
-This log was last generated on Fri, 05 Sep 2025 22:47:54 GMT and should not be manually modified.
+This log was last generated on Mon, 08 Sep 2025 05:13:55 GMT and should not be manually modified.
+
+## 5.3.2
+Mon, 08 Sep 2025 05:13:55 GMT
+
+_Version update only_
 
 ## 5.3.1
 Fri, 05 Sep 2025 22:47:54 GMT
