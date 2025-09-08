@@ -16,6 +16,12 @@
 #     - Only runs on `release/*` branches
 #     - Bumps the version to the next Patch version
 
+resources:
+  repositories:
+    - repository: common
+      ref: master
+      name: andremig-bentley/itwinjs-core-fork
+      
 parameters:
   - name: BumpType
     displayName: Version Bump Type
