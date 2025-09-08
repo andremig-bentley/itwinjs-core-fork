@@ -54,13 +54,15 @@ jobs:
           if [[ $prevAuthor =~ $authorCheck ]] && [[ $prevCommit =~ $commitCheck ]]; then
             echo "Previous commit appears to be from a prior nightly build. Skipping current nightly bump."
             exit 1
+          else
+            echo "Previous commit does not appear to be from a prior nightly build. Continuing with current nightly bump."
           fi
         continueOnError: true
 
   - job: CreateBranch
     displayName: Create branch for next release
     dependsOn: CheckPrevCommit
-    condition: and(eq('${{ parameters.BumpType }}', 'releaseCandidate'), in(dependencies.CheckPrevCommit.result, 'Succeeded', 'Skipped'), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    condition: and(eq('${{ parameters.BumpType }}', 'releaseCandidate'), in(dependencies.CheckPrevCommit.result, 'Succeeded', 'Skipped'))
     steps:
       - checkout: self
       - bash: |
