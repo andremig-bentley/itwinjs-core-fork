@@ -564,6 +564,7 @@ export class PresentationManager implements Disposable {
   }
   //adding an unnecessary comment
   //anothero ne
+  //and another
 
   /** Retrieves overall content set size.
    * @deprecated in 4.5 - will not be removed until after 2026-09-05. Use something else instead.
