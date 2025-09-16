@@ -333,7 +333,7 @@ export class PresentationManager implements Disposable {
   /**
    * Create a new PresentationManager instance
    * @param props Optional properties used to configure the manager
-   * @deprecated in 5.0. Use something else.
+   * @deprecated in 5.0 - will not be removed until after 2026-09-16. Use something else.
    */
   public static create(props?: PresentationManagerProps) {
     return new PresentationManager(props);
@@ -535,7 +535,7 @@ export class PresentationManager implements Disposable {
    * Get information about the sources of content when building it for specific ECClasses. Sources involve classes of the primary select instance,
    * its related instances for loading related and navigation properties.
    * @public
-   * @deprecated in 5.0. Use something else.
+   * @deprecated in 5.0 - will not be removed until after 2026-09-16. Use something else.
    */
   public async getContentSources(requestOptions: ContentSourcesRequestOptions<IModelConnection> & ClientDiagnosticsAttribute): Promise<SelectClassInfo[]> {
     startIModelInitialization(requestOptions.imodel);
