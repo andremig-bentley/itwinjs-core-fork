@@ -529,13 +529,13 @@ export class PresentationManager implements Disposable {
     const result = await this._requestsHandler.getFilteredNodePaths(this.toRpcTokenOptions(options));
     return result.map((npe) => this._localizationHelper.getLocalizedNodePathElement(npe));
   }
-
   /* eslint-enable @typescript-eslint/no-deprecated */
 
   /**
    * Get information about the sources of content when building it for specific ECClasses. Sources involve classes of the primary select instance,
    * its related instances for loading related and navigation properties.
    * @public
+   * @deprecated in 5.0. Use something else.
    */
   public async getContentSources(requestOptions: ContentSourcesRequestOptions<IModelConnection> & ClientDiagnosticsAttribute): Promise<SelectClassInfo[]> {
     startIModelInitialization(requestOptions.imodel);
