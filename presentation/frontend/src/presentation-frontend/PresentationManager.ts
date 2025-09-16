@@ -333,7 +333,7 @@ export class PresentationManager implements Disposable {
   /**
    * Create a new PresentationManager instance
    * @param props Optional properties used to configure the manager
-   * @deprecated in 5.0 - will not be removed until after 2026-09-16. Use something else.
+   * @deprecated in 5.0 - will not be removed until after 2026-09-16. Use something something else.
    */
   public static create(props?: PresentationManagerProps) {
     return new PresentationManager(props);
@@ -562,6 +562,9 @@ export class PresentationManager implements Disposable {
       await ensureIModelInitialized(requestOptions.imodel);
     }
   }
+  //adding an unnecessary comment
+  //anothero ne
+  //and another
 
   /** Retrieves overall content set size.
    * @deprecated in 4.5 - will not be removed until after 2026-09-05. Use something else instead.

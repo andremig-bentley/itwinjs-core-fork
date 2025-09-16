@@ -2,6 +2,30 @@
   "name": "@itwin/core-backend",
   "entries": [
     {
+      "version": "5.2.2",
+      "tag": "@itwin/core-backend_v5.2.2",
+      "date": "Tue, 16 Sep 2025 21:32:06 GMT",
+      "comments": {}
+    },
+    {
+      "version": "5.2.1",
+      "tag": "@itwin/core-backend_v5.2.1",
+      "date": "Tue, 16 Sep 2025 21:20:37 GMT",
+      "comments": {}
+    },
+    {
+      "version": "5.2.0",
+      "tag": "@itwin/core-backend_v5.2.0",
+      "date": "Tue, 16 Sep 2025 20:14:09 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "added new dropSchemas method"
+          }
+        ]
+      }
+    },
+    {
       "version": "5.1.7",
       "tag": "@itwin/core-backend_v5.1.7",
       "date": "Tue, 09 Sep 2025 19:28:04 GMT",

@@ -1,6 +1,26 @@
 # Change Log - @itwin/core-frontend
 
-This log was last generated on Tue, 09 Sep 2025 19:33:20 GMT and should not be manually modified.
+This log was last generated on Tue, 16 Sep 2025 21:32:06 GMT and should not be manually modified.
+
+## 5.2.2
+Tue, 16 Sep 2025 21:32:06 GMT
+
+_Version update only_
+
+## 5.2.1
+Tue, 16 Sep 2025 21:20:37 GMT
+
+_Version update only_
+
+## 5.2.0
+Tue, 16 Sep 2025 20:14:09 GMT
+
+### Updates
+
+- Update Google Maps attribution
+- fix: allow IModelApp.publicPath to be passed without a trailing slash `/`
+- Draco-decoding resources are now bundled locally into iTwin.js, rather than querying them from a CDN.
+- Fix 'ghost' elements when using GraphicalEditingScope with model masking.
 
 ## 5.1.7
 Tue, 09 Sep 2025 19:28:04 GMT
