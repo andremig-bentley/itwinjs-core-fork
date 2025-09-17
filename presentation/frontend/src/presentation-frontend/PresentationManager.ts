@@ -337,7 +337,7 @@ export class PresentationManager implements Disposable {
   /**
    * Create a new PresentationManager instance
    * @param props Optional properties used to configure the manager
-   * @deprecated in 5.0 - will not be removed until after 2026-09-17. Use something something else.
+   * @deprecated in 5.0. Use something something else.
    */
   public static create(props?: PresentationManagerProps) {
     return new PresentationManager(props);
