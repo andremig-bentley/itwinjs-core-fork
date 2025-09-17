@@ -2,6 +2,12 @@
   "name": "@itwin/core-orbitgt",
   "entries": [
     {
+      "version": "5.2.10",
+      "tag": "@itwin/core-orbitgt_v5.2.10",
+      "date": "Wed, 17 Sep 2025 21:30:14 GMT",
+      "comments": {}
+    },
+    {
       "version": "5.2.9",
       "tag": "@itwin/core-orbitgt_v5.2.9",
       "date": "Wed, 17 Sep 2025 21:20:24 GMT",
