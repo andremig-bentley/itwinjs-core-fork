@@ -176,9 +176,8 @@ jobs:
           - bash: node common/scripts/install-run-rush.js lint-deprecation
             displayName: rush lint-deprecation
 
-          - script: npm run -s ruleset-json-schema
-            workingDirectory: presentation/common/
-            displayName: Build presentation-common
+          - script: node common/scripts/install-run-rush.js build
+            displayName: rush build
 
           - bash: |
               if git diff --quiet; then
