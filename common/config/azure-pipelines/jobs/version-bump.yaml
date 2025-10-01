@@ -176,6 +176,10 @@ jobs:
           - bash: node common/scripts/install-run-rush.js lint-deprecation
             displayName: rush lint-deprecation
 
+          - script: rushx build
+            workingDirectory: presentation/common/
+            displayName: Build presentation-common
+
           - bash: |
               if git diff --quiet; then
                 echo "No deprecation comment changes were made"
