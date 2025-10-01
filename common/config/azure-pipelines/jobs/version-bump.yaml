@@ -182,7 +182,7 @@ jobs:
               VERSION_BUMP: True
 
           - bash: |
-              if git diff; then
+              if git diff --exit-code; then
                 echo "No deprecation comment changes were made"
               else
                 echo "Deprecation comment changes were made"
