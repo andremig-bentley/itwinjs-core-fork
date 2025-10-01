@@ -176,7 +176,7 @@ jobs:
           - bash: node common/scripts/install-run-rush.js lint-deprecation
             displayName: rush lint-deprecation
 
-          - script: rushx build
+          - script: npm run -s ruleset-json-schema
             workingDirectory: presentation/common/
             displayName: Build presentation-common
 
