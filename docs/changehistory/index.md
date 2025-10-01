@@ -1,4 +1,3 @@
-
 # 5.3.0 Change Notes
 
 - [5.3.0 Change Notes](#5.3.0 Change Notes)
@@ -11,6 +10,8 @@
     - [@itwin/presentation-common](#itwinpresentation-common)
     - [@itwin/presentation-backend](#itwinpresentation-backend)
     - [@itwin/presentation-frontend](#itwinpresentation-frontend)
+  - [Display](#display)
+    - [Draco decoding](#draco-decoding)
 
 ## @itwin/core-ecschema-metadata
 
@@ -21,7 +22,9 @@
 ### Changes
 
 - Added  `unitSystem` property to [FormatSet]($ecschema-metadata) interface, using [UnitSystemKey]($quantity) type. This will help move APIs away from relying on `activeUnitSystem` in `quantityFormatter`, as they move to the new formatting APIs using `IModelApp.formatsProvider`. Looking ahead, tools and components that use formatting APIs can then listen to just the `onFormatsChanged` event from `IModelApp.formatsProvider` instead of `IModelApp.quantityFormatter.onActiveUnitSystemChanged`.
+- Added optional `description` property to [FormatSet]($ecschema-metadata) interface. This property allows for additional descriptive text to be associated with a format set, providing better documentation and user context for format set purposes.
 - Changed interface for formats in `FormatSet` from [SchemaItemFormatProps]($ecschema-metadata) to [FormatDefinition]($quantity). FormatSet just uses the `name`, `label`, `description` field from `SchemaItemFormatProps`, which `FormatDefinition` already has.
+
 ## Presentation
 
 ### Deprecation of hierarchy-related APIs
@@ -129,3 +132,9 @@ Deprecated all hierarchy-related types (see [Deprecation of hierarchy-related AP
   - `PresentationManager.getNodesDescriptor`
   - `PresentationManager.getNodesIterator`
   - `PresentationManager.onIModelHierarchyChanged`
+
+## Display
+
+### Draco decoding
+
+Draco decoding in iTwin.js has been changed so that the loaders.gl dependency will no longer use a CDN to request the draco-decoder source files. Instead, we now bundle those resources into iTwin.js from a new draco3d dependency. We ask the loaders.gl library to locally use those resources.
