@@ -176,7 +176,7 @@ jobs:
           - bash: node common/scripts/install-run-rush.js lint-deprecation
             displayName: rush lint-deprecation
 
-          - script: node common/scripts/install-run-rush.js build --to @itwin/presentation-common
+          - script: node common/scripts/install-run-rush.js build
             displayName: rush build to presentation-common
             env:
               VERSION_BUMP: "true"
