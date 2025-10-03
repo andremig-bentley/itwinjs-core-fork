@@ -1,9 +1,10 @@
 ---
-publish: false
+deltaDoc: true
+version: '5.3.0'
 ---
-# NextVersion
+# 5.3.0 Change Notes
 
-- [NextVersion](#nextversion)
+- [5.3.0 Change Notes](#5.3.0 Change Notes)
   - [@itwin/core-ecschema-metadata](#itwincore-ecschema-metadata)
     - [Additions](#additions)
     - [Changes](#changes)
@@ -141,3 +142,4 @@ Deprecated all hierarchy-related types (see [Deprecation of hierarchy-related AP
 ### Draco decoding
 
 Draco decoding in iTwin.js has been changed so that the loaders.gl dependency will no longer use a CDN to request the draco-decoder source files. Instead, we now bundle those resources into iTwin.js from a new draco3d dependency. We ask the loaders.gl library to locally use those resources.
+
