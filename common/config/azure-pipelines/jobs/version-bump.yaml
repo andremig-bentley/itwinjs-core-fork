@@ -175,7 +175,7 @@ jobs:
       - bash: node common/scripts/install-run-rush.js audit
         displayName: rush audit
 
-      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
+      - ${{ if eq(parameters.BumpType, 'patch')) }}:
           - bash: node common/scripts/install-run-rush.js lint-deprecation
             displayName: rush lint-deprecation
 
@@ -262,7 +262,7 @@ jobs:
           #The mergify.yml file needs to be updated to change the "latestMinor" branch for security fixes
           - bash: |
               mergifyPath=".github/mergify.yml"
-              version = $(getVersion.version)
+              version=$(getVersion.version)
               releaseBranch="release/$(version | sed 's/\([0-9]*\.[0-9]*\)\.[0-9]*/\1.x/')"
 
               echo "Updating mergify.yml to use $releaseBranch as the first backport branch for security fixes"
