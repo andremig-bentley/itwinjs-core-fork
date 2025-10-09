@@ -175,7 +175,7 @@ jobs:
       #- bash: node common/scripts/install-run-rush.js audit
        # displayName: rush audit
 
-      - ${{ if eq(parameters.BumpType, 'patch') }}:
+      - ${{ if or(eq(parameters.BumpType, 'minor'), eq(parameters.BumpType, 'patch')) }}:
           - bash: node common/scripts/install-run-rush.js lint-deprecation
             displayName: rush lint-deprecation
 
