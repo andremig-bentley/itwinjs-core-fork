@@ -262,7 +262,8 @@ jobs:
           #The mergify.yml file needs to be updated to change the "latestMinor" branch for security fixes
           - bash: |
               mergifyPath=".github/mergify.yml"
-              releaseBranch="release/$(getVersion.version | sed 's/\([0-9]*\.[0-9]*\)\.[0-9]*/\1.x/')"
+              version = $(getVersion.version)
+              releaseBranch="release/$(version | sed 's/\([0-9]*\.[0-9]*\)\.[0-9]*/\1.x/')"
 
               echo "Updating mergify.yml to use $releaseBranch as the first backport branch for security fixes"
 
