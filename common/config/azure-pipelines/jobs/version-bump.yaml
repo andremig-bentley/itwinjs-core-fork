@@ -263,6 +263,7 @@ jobs:
           - bash: |
               mergifyPath=".github/mergify.yml"
               version = $(getVersion.version)
+              echo $version
               releaseBranch="release/$($version | sed 's/\([0-9]*\.[0-9]*\)\.[0-9]*/\1.x/')"
               echo $releaseBranch
               echo "Updating mergify.yml to use $releaseBranch as the first backport branch for security fixes"
