@@ -1,6 +1,11 @@
 # Change Log - @itwin/frontend-tiles
 
-This log was last generated on Fri, 03 Oct 2025 15:22:56 GMT and should not be manually modified.
+This log was last generated on Thu, 09 Oct 2025 21:41:42 GMT and should not be manually modified.
+
+## 5.5.0
+Thu, 09 Oct 2025 21:41:42 GMT
+
+_Version update only_
 
 ## 5.4.0
 Fri, 03 Oct 2025 15:22:56 GMT

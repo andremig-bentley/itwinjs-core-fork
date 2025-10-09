@@ -1,7 +1,7 @@
 # Configuration file for mergify
 
 # Branch variables for backport targets
-latestMinor: &latestMinor "release/5.2.x"
+latestMinor: &latestMinor "release/5.5.x"
 previousMajor: &previousMajor "release/4.9.x"
 
 defaults:
