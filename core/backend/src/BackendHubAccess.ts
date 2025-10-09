@@ -18,6 +18,12 @@ import type { TokenArg } from "./IModelDb";
 /** Exception thrown if lock cannot be acquired.
  * @beta
 */
+
+
+
+
+
+
 export class LockConflict extends IModelError {
   public constructor(
     /** Id of Briefcase holding lock */
