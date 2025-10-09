@@ -263,11 +263,11 @@ jobs:
           - bash: |
               mergifyPath=".github/mergify.yml"
               releaseBranch="release/$(getVersion.version | sed 's/\([0-9]*\.[0-9]*\)\.[0-9]*/\1.x/')"
-              echo releaseBranch
+              echo $releaseBranch
               echo "Updating mergify.yml to use $releaseBranch as the first backport branch for security fixes"
 
               # Update the latestMinor variable at the top of the mergify.yml file
-              sed -i "s/^latestMinor: \&latestMinor \"release\/[0-9]*\.[0-9]*\.x\"$/latestMinor: \&latestMinor \"$releaseBranch\"/" "$mergifyPath"
+              sed -i "s|^latestMinor: \&latestMinor \"release/[0-9]*\.[0-9]*\.x\"$|latestMinor: \&latestMinor \"$releaseBranch\"|" "$mergifyPath"
 
             displayName: Update mergify.yml for new minor release
             condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
