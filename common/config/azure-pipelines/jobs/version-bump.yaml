@@ -267,7 +267,7 @@ jobs:
               echo "Updating mergify.yml to use $releaseBranch as the recent minor branch for security fixes"
 
               # Update the latest minor release branch in mergify.yml
-              sed -i "0,/\"release\/[0-9]*\.[0-9]*\.x\"/ s|\"release/[0-9]*\.[0-9]*\.x\"|\"$releaseBranch\"|" "$mergifyPath"
+              yq eval '(.pull_request_rules[] | select(.name == "Automatic backport for Security fixes") | .actions.backport.branches[0]) = "'"$releaseBranch"'"' -i "$mergifyPath"
 
             displayName: Update mergify.yml for new minor release
             condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
