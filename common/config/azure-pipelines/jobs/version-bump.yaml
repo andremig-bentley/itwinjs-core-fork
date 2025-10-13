@@ -262,16 +262,12 @@ jobs:
           #The mergify.yml file needs to be updated to change the "latestMinor" branch for security fixes
           - bash: |
               mergifyPath=".github/mergify.yml"
-              #version=$(getVersion.version)
-              #echo "VERSION: " $version
-              xVersion=$(echo $(getVersion.version) | sed 's/\([0-9]*\.[0-9]*\)\.[0-9]*/\1.x/')
-              echo "X: " $xVersion
-              releaseBranch="release/$xVersion"
-              echo $releaseBranch
-              echo "Updating mergify.yml to use $releaseBranch as the first backport branch for security fixes"
+              version=$(echo $(getVersion.version) | sed 's/\([0-9]*\.[0-9]*\)\.[0-9]*/\1.x/')
+              releaseBranch="release/$version"
+              echo "Updating mergify.yml to use $releaseBranch as the recent minor branch for security fixes"
 
-              # Update the latestMinor variable at the top of the mergify.yml file
-              sed -i "s|^latestMinor: \&latestMinor \"release/[0-9]*\.[0-9]*\.x\"$|latestMinor: \&latestMinor \"$releaseBranch\"|" "$mergifyPath"
+              # Update the latest minor release branch in mergify.yml
+              sed -i "0,/\"release\/[0-9]*\.[0-9]*\.x\"/ s|\"release/[0-9]*\.[0-9]*\.x\"|\"$releaseBranch\"|" "$mergifyPath"
 
             displayName: Update mergify.yml for new minor release
             condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
