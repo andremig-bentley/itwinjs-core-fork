@@ -6,7 +6,6 @@ defaults:
       assignees:
         - "{{ author }}"
       title: "{{ title }} (backport #{{ number }}) [{{ destination_branch }}]"
-
 pull_request_rules:
   - name: Add reviewers to backports
     conditions:
@@ -17,7 +16,6 @@ pull_request_rules:
       request_reviews:
         teams:
           - "@iTwin/itwinjs-core-backport-reviewers"
-
   - name: Ask to resolve conflict
     conditions:
       - and:
@@ -25,10 +23,7 @@ pull_request_rules:
           - -draft
     actions:
       comment:
-        message: |
-          This pull request is now in conflicts. Could you fix it @{{author}}? 🙏
-          To fixup this pull request, you can check out it locally. See documentation: https://help.github.com/articles/checking-out-pull-requests-locally/
-
+        message: "This pull request is now in conflicts. Could you fix it @{{author}}? \U0001F64F\nTo fixup this pull request, you can check out it locally. See documentation: https://help.github.com/articles/checking-out-pull-requests-locally/\n"
   - name: Automatic backport for Security fixes
     conditions:
       - and:
@@ -38,5 +33,5 @@ pull_request_rules:
     actions:
       backport:
         branches:
-          - "release/5.7.x"
+          - "release/5.8.x"
           - "release/4.9.x"
