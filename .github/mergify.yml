@@ -33,5 +33,5 @@ pull_request_rules:
     actions:
       backport:
         branches:
-          - "release/5.8.x"
+          - "release/5.9.x"
           - "release/4.9.x"
